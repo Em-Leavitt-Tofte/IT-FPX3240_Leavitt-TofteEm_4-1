@@ -1,0 +1,498 @@
+/* ===========================
+   Retro Tron Theme Stylesheet
+   Author: Em Leavitt-Tofte
+   Date: 2025-05-25
+   Last Updated: 2025-06-03
+   Description: External stylesheet for styling the portfolio site using tag, class, and ID selectors.
+   =========================== */
+
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* CSS Variables for global color scheme and font */
+:root {
+  --bg-color: #0a0f1c;
+  --text-color: #00ffff;
+  --accent-color: #ff00ff;
+  --secondary-color: #0ff;
+  --font-main: 'Orbitron', sans-serif;
+}
+
+/* ======================
+   Basic Body Styling
+   ====================== */
+body {
+  background-image: linear-gradient(to bottom, #0a0f1c, #05060e);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ======================
+   Header Styling
+   ====================== */
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Header Logo Styling */
+header img {
+  display: block;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 20px var(--secondary-color);
+}
+
+/* ======================
+   Navigation Styling
+   ====================== */
+nav {
+  background: #111;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Navigation List Styling */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+/* Navigation List Items */
+nav li {
+  margin: 0 1rem;
+}
+
+/* Navigation Links */
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* ======================
+   Main Content Area
+   ====================== */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ================================
+   Layout Wrapper Using Flexbox
+   ================================ */
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}  
+
+/* Section Styling by Tag */
+section {
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-left: 3px solid var(--accent-color);
+}
+
+/* Section Highlight using Class */
+.section-highlight {
+  background-color: rgba(255, 0, 255, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* Article Styling using ID */
+#featured-article {
+  border: 1px dashed var(--secondary-color);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-size: 1.8em;
+  font-style: normal;
+  font-weight: bold;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Paragraph Text */
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* ======================
+   Footer Styling
+   ====================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid var(--accent-color);
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* ======================
+   Image Styling
+   ====================== */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* ======================
+   Hyperlink Styling
+   ====================== */
+a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 3px var(--accent-color);
+}
+/* ======================
+   Table Styling for About Page
+   ====================== */
+/* Styles a responsive and themed table */
+.info-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: rgba(0, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+/* Header row styling */
+.info-table th {
+  background-color: var(--accent-color);
+  color: #000;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+/* Data rows styling */
+.info-table td {
+  border: 1px solid var(--secondary-color);
+  text-align: left;
+  padding: 0.75rem;
+}
+
+/* Zebra striping */
+.info-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Left-align utility class for specific elements like lists */
+.left-align {
+  text-align: left;
+  margin: 0 auto; /* keep it centered in its container */
+  max-width: 800px; /* optional, to keep it readable */
+}
+
+/* ======================
+   Contact Form Styling
+   ====================== */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  color: var(--secondary-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #111;
+  border: 1px solid var(--secondary-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+/* ======================
+   Responsive Gallery Using CSS Grid
+   ====================== */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.gallery-preview img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================
+   Responsive Gallery Thumbnails
+   ====================== */
+
+/* Grid layout for image thumbnails */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts based on screen width */
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Individual thumbnail styling */
+.gallery-preview img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover; /* Ensures consistent cropping */
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect to enhance interactivity */
+.gallery-preview img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Stack single column on small screens */
+@media (max-width: 600px) {
+  .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================
+   Embedded YouTube Video Styling
+   ====================== */
+
+/* Wrapper for responsive 16:9 ratio video */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 2rem auto;
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--secondary-color);
+}
+
+/* Iframe fills container */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ======================
+   Audio Player Styling
+   ====================== */
+
+/* Styled audio player to match Tron theme */
+audio {
+  display: block;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  background-color: #111;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* ======================
+   Media Section Headings
+   ====================== */
+
+/* Styling for h2 headers above audio/video */
+.media-heading {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  text-shadow: 0 0 8px var(--accent-color);
+  margin-top: 2rem;
+}
+
+/* ======================
+   Custom Lightbox Viewer
+   ====================== */
+
+/* Fullscreen overlay */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 28, 0.95); /* matches Tron theme */
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+/* Full-size image */
+#lightbox-image {
+  max-width: 90%;
+  max-height: 80vh;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 25px var(--accent-color);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Close button */
+#lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  text-shadow: 0 0 10px var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+#lightbox-close:hover {
+  color: var(--accent-color);
+}
+
+/* ===============================
+   WELCOME + VIDEO SPLIT LAYOUT
+   =============================== */
+
+/* Flex container for split layout on homepage */
+.intro-with-video {
+  display: flex;
+  flex-wrap: wrap; /* Ensures vertical stacking on smaller screens */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Left side: Welcome message text */
+.welcome-message {
+  flex: 1 1 45%;
+  min-width: 280px;
+  text-align: left;
+}
+
+/* Right side: Video embed */
+.video-side {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+/* Responsive fallback for narrow screens */
+@media (max-width: 768px) {
+  .intro-with-video {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-message,
+  .video-side {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .welcome-message {
+    text-align: center;
+  }
+}

@@ -1,0 +1,116 @@
+<!-- 
+    Name: Em Leavitt-Tofte
+    Date: 2025-06-03
+    Last Updated Date: 2025-06-04
+    File: gallery.html
+    Description: Gallery page with project images and audio resources.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery - Em Leavitt-Tofte</title>
+  <meta name="author" content="Em Leavitt-Tofte" />
+  <meta name="description" content="Gallery page with images, audio, and interactive lightbox." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Page wrapper for layout consistency -->
+  <div class="container">
+
+    <!-- Header section with logo -->
+    <header>
+      <img src="logo_tron.png" alt="Em Leavitt-Tofte Tron Logo" width="180" />
+    </header>
+
+    <!-- Navigation menu -->
+    <nav class="nav-container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="interests.html">Interests</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-container">
+
+      <!-- Project thumbnails with lightbox -->
+      <section class="section-highlight">
+        <h2>Project Gallery</h2>
+        <p>Here are some visual highlights from my recent work and creative experiments.</p>
+
+        <div class="gallery-preview">
+          <a href="Gallery1.png"><img src="Gallery1.png" alt="Project 1" /></a>
+          <a href="Gallery2.png"><img src="Gallery2.png" alt="Project 2" /></a>
+          <a href="Gallery3.png"><img src="Gallery3.png" alt="Project 3" /></a>
+          <a href="Gallery4.png"><img src="Gallery4.png" alt="Project 4" /></a>
+        </div>
+      </section>
+
+      <!-- MP3 audio player with full context -->
+      <section class="section-highlight">
+        <h2 class="media-heading">Listen to “Burn Out to Brilliance”</h2>
+        <p>
+          In 2001, Linda Jones’s world changed. As a young, successful businesswoman, she was constantly on the move, managing a demanding job, traveling, and maintaining a fitness-focused lifestyle. But like many professionals, she ignored early signs of stress and exhaustion, leading to a full collapse. Diagnosed with Chronic Fatigue Syndrome, Linda lost everything.
+        </p>
+        <p>
+          Refusing to accept that diagnosis as the end of her story, Linda rebuilt her life using a holistic, self-coached approach to healing. Her recovery inspired the founding of the <strong>Salus Fatigue Foundation</strong> and <strong>Life4Changing</strong>, which have since helped over 15,000 people reclaim their well-being.
+        </p>
+        <p>
+          This TEDx talk, <em>“Burn Out to Brilliance: Recovery from Chronic Fatigue”</em>, shares her journey and empowers others to recognize the signs, reset their path, and prioritize sustainable wellness.
+        </p>
+        <audio controls>
+          <source src="burnout-to-brilliance.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+      <p>&copy; 2025 Em Leavitt-Tofte</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox overlay (starts hidden) -->
+  <div id="lightbox-overlay">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Full size preview" />
+  </div>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    const galleryLinks = document.querySelectorAll('.gallery-preview a');
+    const lightbox = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    galleryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const imgSrc = this.getAttribute('href');
+        lightboxImage.src = imgSrc;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImage.src = '';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImage.src = '';
+      }
+    });
+  </script>
+</body>
+</html>
